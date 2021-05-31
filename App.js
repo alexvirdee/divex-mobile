@@ -1,9 +1,8 @@
-import { registerRootComponent } from 'expo';
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as RootNavigation from './routes/RootNavRef';
+import * as RootNavigation from './src/routes/RootNavRef';
 
 function HomeScreen() {
   return (
@@ -15,7 +14,7 @@ function HomeScreen() {
 
 const Stack = createStackNavigator();
 
-function App() {
+export default function App() {
   return (
     <NavigationContainer ref={RootNavigation.navigationRef}>
       <Stack.Navigator>
@@ -24,7 +23,3 @@ function App() {
     </NavigationContainer>
   );
 }
-
-export default App;
-
-registerRootComponent(App);
